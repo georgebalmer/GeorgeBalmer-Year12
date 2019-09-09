@@ -1,0 +1,36 @@
+body
+
+{
+  font-family: candara, sans-serif;
+  font-size: 12pt;
+  color: #003399
+}
+
+p {
+font-size: 12pt;}
+
+#header img {height:70px}
+
+h2 {
+font-size: 16pt;
+}
+
+h3 {
+font-size: 14pt;
+}
+
+#wrapper {
+margin: auto;
+background-color: #ADD8E6;
+width: 40em;
+padding: 5px;
+}
+
+#header {
+	height: 75px;
+	border-bottom: 2px #B2BCC6 dotted
+}
+
+#nav{float:left;width:15em}
+
+#container{float:right;width:24em}
