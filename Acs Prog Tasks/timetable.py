@@ -13,3 +13,5 @@ for x in range(0, 13):
 
 
 #Test Data: Input 1 . output
+###ACS - Just a few more comment required especially going into kloops of selection constructs
+###ACS - Starts with zero .. shoulod strat with 4!
