@@ -18,31 +18,49 @@
 
 <form name="question">
 <p id="box">Question - How long was the Tully Monster?</p>
-<button type="button" onclick="validate()">Show answer</button>
+<button type="button" onclick="button_function()">Show answer</button>
 <input type="text" name="answer">
 <p id="box2">Question - click below to find where it lived.</p>
 <button type="button" onclick="validate()">Show answer</button>
 <input type="text" name="answer">
 
 <script>
+
+function button_function(){
+
+var x = document.forms["question"]["answer"].value;
+alert("yes")
+alert(x)
+	if (x == "") {
+		alert("yes")
+		document.getElementById("box").style.color="red";
+		else if (x == "35cm"){
+			alert("correct!");;
+}
+
+	
+</script>
+<script>
 function validate() {
 	var x = document.forms["question"]["answer"].value;
 	if (x == "") {
-		document.getElementById("box").style.color="red";
+		document.getElementById("answer").style.color="red";
 		else if (x == "35cm"){
 			alert("correct!");
 
 		}
 	}
 }
-
+</script>
+<script>
 function showHide() {
 	var x = document.getElementById("monster");
-	if(x.style.display == 'block')
-	x.style.display = 'none';
-	else
-		x.style.display = 'block';
+	if(x.style.display == 'none') {
+	x.style.display = 'block';
+}	else {
+		x.style.display = 'none';
+	}
 }
-		</script>
+</script>
 </body>
 </html>
