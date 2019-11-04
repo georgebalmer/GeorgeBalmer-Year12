@@ -162,20 +162,6 @@ while not done:
         y_direction=3
     #endif
     
-
-    
-    
-    
-
-    
-
-    
-
-    
-
-   
-  
-    
     # -- screen background is BLACK
     screen.fill (BLACK)
     # -- Draw here
