@@ -45,7 +45,7 @@ while not done:
 
     counter = 0 
     for counter in range (0, 9):
-        ball_list[counter] = Ball(__init__)
+        ball_list[counter] = Ball()
 
    
     
