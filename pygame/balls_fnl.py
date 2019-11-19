@@ -11,13 +11,16 @@ BLACK = (0,0,0)
 WHITE = (255,255,255)
 PINK = (255,20,147)
 
+ball_list = []
+
 # Initialize Pygame
 pygame.init()
 
 # Set the height and width of the screen
 screen_width = 1400
-screen_height = 700           
+screen_height = 700    
 screen = pygame.display.set_mode([screen_width, screen_height])
+
 
 # Used to manage how fast the screen updates
 clock = pygame.time.Clock()
@@ -25,7 +28,7 @@ clock = pygame.time.Clock()
 # Define the class Ball
 class Ball():
     # Constructor function to define initial state of a ball object
-    def __init__(self, x, y, col, x_speed, y_speed):
+    def __init__(self, x, y, col, x_speed, y_speed, width, length):
         # --- Class Attributes ---
         # Ball position
         self.x = x
@@ -36,10 +39,14 @@ class Ball():
         self.change_y = y_speed
 
         # Ball Size
-        self.size = 10
+        self.size = random.randrange(1,10)
 
         # Ball colour
         self.color = col
+
+        #screen parameters
+        width = screen_width_rand
+        height = screen_length_rand
 
     # -- Class Methods ---
     # Defines the ball's movement
@@ -54,6 +61,49 @@ class Ball():
             self.change_y *= -1
         elif self.y <= 0 + self.size:
             self.change_y *= -1
+            
+        if self.x >= screen_width - self.size:
+            xrand = random.randrange(0, screen_width - 10)
+            yrand = random.randrange(0, screen_height - 10)
+            x_speedrand = random.randrange(1, 10)
+            y_speedrand = random.randrange(1, 10)
+            screen_width_rand = random.randrange(0, 1400)
+            screen_length_rand = random.randrange(1, 700)
+            colour = (random.randrange(0, 240), random.randrange(0, 240), random.randrange(0, 240))
+            theBall = Ball(xrand, yrand, colour, x_speedrand, y_speedrand, screen_width_rand, screen_length_rand)
+            ball_list.append(theBall)
+        elif self.x <= 0 + self.size:
+            xrand = random.randrange(0, screen_width - 10)
+            yrand = random.randrange(0, screen_height - 10)
+            x_speedrand = random.randrange(1, 10)
+            y_speedrand = random.randrange(1, 10)
+            screen_width_rand = random.randrange(0, 1400)
+            screen_length_rand = random.randrange(1, 700)
+            colour = (random.randrange(0, 240), random.randrange(0, 240), random.randrange(0, 240))
+            theBall = Ball(xrand, yrand, colour, x_speedrand, y_speedrand, screen_width_rand, screen_length_rand)
+            ball_list.append(theBall)
+            
+        elif self.y >= screen_height - self.size:
+            xrand = random.randrange(0, screen_width - 10)
+            yrand = random.randrange(0, screen_height - 10)
+            x_speedrand = random.randrange(1, 10)
+            y_speedrand = random.randrange(1, 10)
+            screen_width_rand = random.randrange(0, 1400)
+            screen_length_rand = random.randrange(1, 700)
+            colour = (random.randrange(0, 240), random.randrange(0, 240), random.randrange(0, 240))
+            theBall = Ball(xrand, yrand, colour, x_speedrand, y_speedrand, screen_width_rand, screen_length_rand)
+            ball_list.append(theBall)
+        elif self.y <= 0 + self.size:
+            xrand = random.randrange(0, screen_width - 10)
+            yrand = random.randrange(0, screen_height - 10)
+            x_speedrand = random.randrange(1, 10)
+            y_speedrand = random.randrange(1, 10)
+            screen_width_rand = random.randrange(0, 1400)
+            screen_length_rand = random.randrange(1, 700)
+            colour = (random.randrange(0, 240), random.randrange(0, 240), random.randrange(0, 240))
+            theBall = Ball(xrand, yrand, colour, x_speedrand, y_speedrand, screen_width_rand, screen_length_rand)
+            ball_list.append(theBall)
+
         #end if
     #end proc
 
@@ -68,15 +118,16 @@ class Ball():
 done = False
 
 # Create an object using the ball class
-ball_list = []
-colour_list = [RED, BLUE, GREEN, WHITE, PINK]
-for count in range(0, 1000000):
+
+for count in range(0, 1):
     xrand = random.randrange(0, screen_width - 10)
     yrand = random.randrange(0, screen_height - 10)
     x_speedrand = random.randrange(1, 10)
     y_speedrand = random.randrange(1, 10)
-    colour = random.choice(colour_list)
-    theBall = Ball(xrand, yrand, colour, x_speedrand, y_speedrand)
+    screen_width_rand = random.randrange(0, 1400)
+    screen_length_rand = random.randrange(1, 700)
+    colour = (random.randrange(0, 240), random.randrange(0, 240), random.randrange(0, 240))
+    theBall = Ball(xrand, yrand, colour, x_speedrand, y_speedrand, screen_width_rand, screen_length_rand)
     ball_list.append(theBall)
 #next count
 # Game loop
