@@ -39,7 +39,7 @@ class Ball():
         self.change_y = y_speed
 
         # Ball Size
-        self.size = random.randrange(1,10)
+        self.size = random.randrange(1,4)
 
         # Ball colour
         self.color = col
