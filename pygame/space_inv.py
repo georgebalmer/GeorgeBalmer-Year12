@@ -47,12 +47,6 @@ class Player(pygame.sprite.Sprite):
           self.change_x = 1
         if event.key == pygame.K_LEFT:
           self.change_x = -1
-    
-        
-        
-
-
-
 
 
 # Define the class Ball
@@ -93,10 +87,7 @@ class Snow(pygame.sprite.Sprite):
     
     def update(self):
         self.rect.y = self.rect.y +2
-
-        
-           
-                    
+                
 
             #enddef
 
@@ -129,14 +120,6 @@ y = 20
 x_speed = 0
 thePlayer = Player(x, y, YELLOW, x_speed, 20, 10)
 all_sprites_list.add(thePlayer)
-
-
-
-
-
-
-
-
 
 ### -- Game Loop
 while not done:
