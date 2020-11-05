@@ -79,6 +79,7 @@ clock = pygame.time.Clock()
 
 # -- classes
 
+
 #traffic class
 class Traffic(pygame.sprite.Sprite):
 
@@ -102,9 +103,28 @@ class Traffic(pygame.sprite.Sprite):
         speedy = val
         self.traffic_speedy = speedy
 
+#Police car class
+class Police_car(pygame.sprite.Sprite):
 
+    #instatiation
+        def __init__(self, width, height, x_ref, y_ref, speedx, speedy):
 
+            #sprite constructor
+            super().__init__()
+        #end procedure
 
+        def update(self):
+            self.rect.y = self.rect.y + self.speedy
+            self.rect.x = self.rect.x + self.speedx
+        #end procedure
+
+        def police_car_set_speedy(self,val):
+            self.speedy = val
+        #end procedure
+
+        def police_car_set_speedx(self,val):
+            self.speedx = val
+        #end procedure
 
 #tile road edge class
 class Roadedge(pygame.sprite.Sprite):
@@ -122,6 +142,17 @@ class Roadedge(pygame.sprite.Sprite):
         # Set the position of the road edge attributes
         self.rect.x = x_ref
         self.rect.y = y_ref
+
+
+    def road_widen(self, value):
+        for y in range(39):
+
+    def road_narrow(self, value)
+
+    def Left__right_bend(self)
+
+    def Right_left_bend(self)
+
 
 # player class
 class Player(pygame.sprite.Sprite):
@@ -177,7 +208,7 @@ all_sprites_group.add (player)
 traffic_list = pygame.sprite.Group()
 traffic_counter=0
 speedcount=1
-for y in range(50):
+for y in range(5):
     traffic = Traffic(YELLOW,10,10,random.randint(320,550),random.randint(40,200)*-1,speedcount)
     all_sprites_group.add(traffic)
     traffic_counter += 1
@@ -186,7 +217,6 @@ for y in range(50):
 
 #roadedge creataion
 roadedge_list = pygame.sprite.Group()
-
 
 
 # Create walls on the screen (each tile is 20 x 20 so alter cords)
